@@ -1,0 +1,58 @@
+[gd_scene load_steps=5 format=3 uid="uid://cp1o14qlmvkmo"]
+
+[ext_resource type="Texture2D" uid="uid://wckkphbvvbhc" path="res://blau.jpg" id="1_h0aww"]
+[ext_resource type="Script" uid="uid://dgeuxa0b8dm8a" path="res://final.gd" id="1_tvybu"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tvybu"]
+texture = ExtResource("1_h0aww")
+modulate_color = Color(0.370364, 0.370364, 0.370364, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tvybu"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tvybu")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_tvybu")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -222.0
+offset_top = -62.5
+offset_right = 222.0
+offset_bottom = 62.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_tvybu")
+text = "TORNAR AL MENÚ"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[connection signal="pressed" from="Button" to="." method="_on_tornar_pressed"]

@@ -1,0 +1,223 @@
+[gd_scene load_steps=21 format=3 uid="uid://2td8wi7a26ww"]
+
+[ext_resource type="Texture2D" uid="uid://wckkphbvvbhc" path="res://blau.jpg" id="1_0hol4"]
+[ext_resource type="Texture2D" uid="uid://jynaso55p8pj" path="res://blanc.jpg" id="2_q6r6c"]
+[ext_resource type="Texture2D" uid="uid://de0chey5768as" path="res://pilota.webp" id="3_kdubu"]
+[ext_resource type="Texture2D" uid="uid://3j8j02qy2362" path="res://forat.png" id="4_d21ai"]
+[ext_resource type="Script" uid="uid://b7qhudmtde8mc" path="res://pilota.gd" id="4_q6r6c"]
+[ext_resource type="Script" uid="uid://cthalatg5h4q4" path="res://cercle.gd" id="6_kdubu"]
+[ext_resource type="Script" uid="uid://brqqnv46w0h4b" path="res://cercle2.gd" id="7_d2bti"]
+[ext_resource type="Script" uid="uid://3nkkc583wgdu" path="res://cercle3.gd" id="8_ta5nu"]
+[ext_resource type="Script" uid="uid://cvhfqdn6agbeu" path="res://cercle4.gd" id="9_flf07"]
+[ext_resource type="Script" uid="uid://dewgw5yupfvdg" path="res://cercle5.gd" id="10_k73cj"]
+[ext_resource type="Script" uid="uid://bpi6c7xx4xbgr" path="res://cercle6.gd" id="11_rjqkl"]
+[ext_resource type="Script" uid="uid://nx1hcpnifron" path="res://cercle7.gd" id="12_fs4d3"]
+[ext_resource type="Script" uid="uid://bsvpc83v1bxw0" path="res://cercle8.gd" id="13_7vxoj"]
+[ext_resource type="Script" uid="uid://cxoa7ffs50tey" path="res://cercle9.gd" id="14_ei405"]
+[ext_resource type="Script" uid="uid://butjllbcr4qsg" path="res://cercle10.gd" id="15_e8dv2"]
+[ext_resource type="Script" uid="uid://d2nya7rkjcehh" path="res://timer.gd" id="16_ta5nu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rj586"]
+size = Vector2(736.001, 1308)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4d7sh"]
+radius = 631.501
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_d2bti"]
+radius = 610.405
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kdubu"]
+radius = 258.424
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Blau" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(2.10219, 2.09709)
+texture = ExtResource("1_0hol4")
+
+[node name="Blanc" type="Sprite2D" parent="."]
+position = Vector2(13, 324)
+scale = Vector2(0.0353261, 0.495413)
+texture = ExtResource("2_q6r6c")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Blanc"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Blanc/StaticBody2D"]
+position = Vector2(-0.000335693, -6.10352e-05)
+shape = SubResource("RectangleShape2D_rj586")
+
+[node name="Blanc2" type="Sprite2D" parent="."]
+position = Vector2(576, 13.5)
+scale = Vector2(1.49457, 0.0206422)
+texture = ExtResource("2_q6r6c")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Blanc2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Blanc2/StaticBody2D"]
+position = Vector2(-0.000335693, -6.10352e-05)
+shape = SubResource("RectangleShape2D_rj586")
+
+[node name="Blanc3" type="Sprite2D" parent="."]
+position = Vector2(1139, 324)
+scale = Vector2(0.0353261, 0.495413)
+texture = ExtResource("2_q6r6c")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Blanc3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Blanc3/StaticBody2D"]
+position = Vector2(-0.000335693, -6.10352e-05)
+shape = SubResource("RectangleShape2D_rj586")
+
+[node name="Blanc4" type="Sprite2D" parent="."]
+position = Vector2(576, 634.25)
+scale = Vector2(1.49457, 0.0210245)
+texture = ExtResource("2_q6r6c")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Blanc4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Blanc4/StaticBody2D"]
+position = Vector2(-0.000335693, -6.10352e-05)
+shape = SubResource("RectangleShape2D_rj586")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(190.561, 144.25)
+scale = Vector2(0.0744427, 0.0744427)
+script = ExtResource("4_q6r6c")
+
+[node name="Pilota" type="Sprite2D" parent="CharacterBody2D"]
+texture = ExtResource("3_kdubu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(-7.5295, -3.35829)
+shape = SubResource("CircleShape2D_4d7sh")
+
+[node name="Area2D" type="Area2D" parent="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Area2D"]
+shape = SubResource("CircleShape2D_d2bti")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(190, 144)
+scale = Vector2(0.220703, 0.220703)
+script = ExtResource("6_kdubu")
+
+[node name="Forat" type="Sprite2D" parent="Area2D"]
+texture = ExtResource("4_d21ai")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_kdubu")
+
+[node name="Area2D2" type="Area2D" parent="."]
+position = Vector2(190, 144)
+scale = Vector2(0.220703, 0.220703)
+script = ExtResource("7_d2bti")
+
+[node name="Forat" type="Sprite2D" parent="Area2D2"]
+texture = ExtResource("4_d21ai")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+shape = SubResource("CircleShape2D_kdubu")
+
+[node name="Area2D3" type="Area2D" parent="."]
+position = Vector2(190, 144)
+scale = Vector2(0.220703, 0.220703)
+script = ExtResource("8_ta5nu")
+
+[node name="Forat" type="Sprite2D" parent="Area2D3"]
+texture = ExtResource("4_d21ai")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3"]
+shape = SubResource("CircleShape2D_kdubu")
+
+[node name="Area2D4" type="Area2D" parent="."]
+position = Vector2(190, 144)
+scale = Vector2(0.220703, 0.220703)
+script = ExtResource("9_flf07")
+
+[node name="Forat" type="Sprite2D" parent="Area2D4"]
+texture = ExtResource("4_d21ai")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D4"]
+shape = SubResource("CircleShape2D_kdubu")
+
+[node name="Area2D5" type="Area2D" parent="."]
+position = Vector2(190, 144)
+scale = Vector2(0.220703, 0.220703)
+script = ExtResource("10_k73cj")
+
+[node name="Forat" type="Sprite2D" parent="Area2D5"]
+texture = ExtResource("4_d21ai")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D5"]
+shape = SubResource("CircleShape2D_kdubu")
+
+[node name="Area2D6" type="Area2D" parent="."]
+position = Vector2(190, 144)
+scale = Vector2(0.220703, 0.220703)
+script = ExtResource("11_rjqkl")
+
+[node name="Forat" type="Sprite2D" parent="Area2D6"]
+texture = ExtResource("4_d21ai")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D6"]
+shape = SubResource("CircleShape2D_kdubu")
+
+[node name="Area2D7" type="Area2D" parent="."]
+position = Vector2(190, 144)
+scale = Vector2(0.220703, 0.220703)
+script = ExtResource("12_fs4d3")
+
+[node name="Forat" type="Sprite2D" parent="Area2D7"]
+texture = ExtResource("4_d21ai")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D7"]
+shape = SubResource("CircleShape2D_kdubu")
+
+[node name="Area2D8" type="Area2D" parent="."]
+position = Vector2(190, 144)
+scale = Vector2(0.220703, 0.220703)
+script = ExtResource("13_7vxoj")
+
+[node name="Forat" type="Sprite2D" parent="Area2D8"]
+texture = ExtResource("4_d21ai")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D8"]
+shape = SubResource("CircleShape2D_kdubu")
+
+[node name="Area2D9" type="Area2D" parent="."]
+position = Vector2(190, 144)
+scale = Vector2(0.220703, 0.220703)
+script = ExtResource("14_ei405")
+
+[node name="Forat" type="Sprite2D" parent="Area2D9"]
+texture = ExtResource("4_d21ai")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D9"]
+shape = SubResource("CircleShape2D_kdubu")
+
+[node name="Area2D10" type="Area2D" parent="."]
+position = Vector2(190, 144)
+scale = Vector2(0.220703, 0.220703)
+script = ExtResource("15_e8dv2")
+
+[node name="Forat" type="Sprite2D" parent="Area2D10"]
+texture = ExtResource("4_d21ai")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D10"]
+shape = SubResource("CircleShape2D_kdubu")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 528.0
+offset_top = 38.0
+offset_right = 630.0
+offset_bottom = 61.0
+text = "PUNTUACIÓ: "
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 12.0
+one_shot = true
+autostart = true
+script = ExtResource("16_ta5nu")
+
+[connection signal="timeout" from="Timer" to="CharacterBody2D" method="_on_timer_timeout"]

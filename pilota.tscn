@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://balkj65k68vb6"]
+
+[ext_resource type="Script" uid="uid://c1xs371hmdnmc" path="res://script.gd" id="1_dg5c3"]
+[ext_resource type="Texture2D" uid="uid://de0chey5768as" path="res://pilota.webp" id="1_tuwqn"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4yxd2"]
+radius = 77.0
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_dg5c3")
+
+[node name="Pilota" type="Sprite2D" parent="."]
+scale = Vector2(0.121019, 0.121019)
+texture = ExtResource("1_tuwqn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_4yxd2")

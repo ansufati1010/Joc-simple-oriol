@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7w5i7d6rh77u"]
+
+[ext_resource type="Texture2D" uid="uid://jynaso55p8pj" path="res://blanc.jpg" id="1_wq3yl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wq3yl"]
+size = Vector2(765.444, 1320.11)
+
+[node name="Blanc" type="Sprite2D"]
+scale = Vector2(0.0339672, 0.495413)
+texture = ExtResource("1_wq3yl")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-58.8803, -16.1481)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_wq3yl")
